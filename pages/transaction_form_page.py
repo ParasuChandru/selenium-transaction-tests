@@ -22,19 +22,19 @@ class TransactionFormPage:
         option.click()
 
     def enter_amount(self, amount):
-        input = self.driver.find_element(*self.AMOUNT_INPUT)
-        input.clear()
-        input.send_keys(str(amount))
+        input_field = self.driver.find_element(*self.AMOUNT_INPUT)
+        input_field.clear()
+        input_field.send_keys(str(amount))
 
     def enter_description(self, description):
-        input = self.driver.find_element(*self.DESCRIPTION_INPUT)
-        input.clear()
-        input.send_keys(description)
+        input_field = self.driver.find_element(*self.DESCRIPTION_INPUT)
+        input_field.clear()
+        input_field.send_keys(description)
 
     def enter_date(self, date_str):
-        input = self.driver.find_element(*self.DATE_INPUT)
-        input.clear()
-        input.send_keys(date_str)
+        input_field = self.driver.find_element(*self.DATE_INPUT)
+        input_field.clear()
+        input_field.send_keys(date_str)
 
     def submit(self):
         self.driver.find_element(*self.SUBMIT_BUTTON).click()
@@ -52,5 +52,4 @@ class TransactionFormPage:
             return self.driver.find_element(*self.ERROR_AMOUNT).text
         elif field == "description":
             return self.driver.find_element(*self.ERROR_DESCRIPTION).text
-        else:
-            return ""
+        return ""
